@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.annotation.SuppressLint;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
+import android.hardware.SensorManager;
 import android.os.Bundle;
 import android.util.Log;
 import android.util.Pair;
@@ -39,9 +40,6 @@ public class MainActivity extends AppCompatActivity {
                 if(curApp.name != null) {
                 md.update(curApp.name.getBytes());
                 appsNameHashList.add(Pair.create(curApp.name,Base64.getEncoder().encodeToString(md.digest())));
-
-                    Log.d("AAAAAANAME", curApp.name);
-                    Log.d("AAAAAAHASH", curApp.sourceDir);
                 }
             }
         }
